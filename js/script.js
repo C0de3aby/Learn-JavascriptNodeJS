@@ -1,26 +1,10 @@
-// let : ตัวแปรที่เปลี่ยนแปลงค่าได้
+// javascript mode : ต้องประกาศตัวแปรก่อนใช้การเรียกใช้
+'use strict'
 
-let x = 11
-let y = 5
-let z = x + y
+let a = 20
+console.log(a)
 
-console.log(z)
+// Not use : b = 20
+//b = 20
+//console.log(b)
 
-x = 2
-y = 2
-z = x + y
-
-console.log(z)
-
-// const : ตัวแปรที่เปลี่ยนแปลงค่าได้
-
-const data = 2000
-
-console.log(data)
-
-// Workshop
-
-let salary = 18000
-let yearlyIncome = salary*12
-
-console.log(yearlyIncome)
