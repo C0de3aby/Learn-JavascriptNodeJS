@@ -1,10 +1,7 @@
-// javascript mode : ต้องประกาศตัวแปรก่อนใช้การเรียกใช้
-'use strict'
+// javascript : Type System - ทดสอบ
 
-let a = 20
-console.log(a)
+let intData = 10;
+let strData = '10';
 
-// Not use : b = 20
-//b = 20
-//console.log(b)
-
+console.log(intData + strData)
+console.log(intData + Number(strData))
