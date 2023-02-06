@@ -1,8 +1,6 @@
-// javascript : Data type
-let a = 10; // number
-let b = "10"; // string
+// javascript : Interaction
 
-console.log(typeof a);
-console.log(typeof b);
-console.log(typeof (a + b));
-console.log(a + b);
+let strFirstName = prompt('กรุณาป้อน : ชื่อ')
+let strLastName = prompt('กรุณาป้อน : นามสกุล')
+
+alert(`สวัสดี : ${strFirstName} ${strLastName}`)
