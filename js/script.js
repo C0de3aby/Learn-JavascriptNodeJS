@@ -8,7 +8,7 @@
 let x = prompt('x ?')
 let y = prompt('y ?')
 
-alert(`x : type ${typeof x}`)5
+alert(`x : type ${typeof x}`)
 alert(`y : type ${typeof y}`)
 
 alert(`${x} + ${y} = ${Number(x) + Number(y)}`)
