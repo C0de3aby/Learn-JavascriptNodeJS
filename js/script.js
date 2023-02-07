@@ -1,17 +1,19 @@
-// javascript : Interaction
+let a = 10
+let b = 10
 
-// let strFirstName = prompt('กรุณาป้อน : ชื่อ')
-// let strLastName = prompt('กรุณาป้อน : นามสกุล')
+console.log('a = b',a == b)
+console.log('a = b',a != b)
+console.log('a = b',a > b)
+console.log('a = b',a >= b)
+console.log('a = b',a < b)
+console.log('a = b',a <= b)
 
-// alert(`สวัสดี : ${strFirstName} ${strLastName}`)
+let age = 51
 
-let x = prompt('x ?')
-let y = prompt('y ?')
-
-alert(`x : type ${typeof x}`)
-alert(`y : type ${typeof y}`)
-
-alert(`${x} + ${y} = ${Number(x) + Number(y)}`)
-alert(`${x} - ${y} = ${Number(x) - Number(y)}`)
-alert(`${x} * ${y} = ${Number(x) * Number(y)}`)
-alert(`${x} / ${y} = ${Number(x) / Number(y)}`)
+if(age >= 51){
+    console.log('ผู้สูงอายุ')
+}else if(age > 18){
+    console.log('วัยรุ่น')
+}else{
+    console.log('เด็ก')
+}
