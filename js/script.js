@@ -20,13 +20,28 @@
 // }
 
 //---------------------------------------------------- 2
-let username = prompt('username')
-let password = prompt('password')
+// let username = prompt('username')
+// let password = prompt('password')
 
-if (username == 'admin' && password == '1234') {
-  alert('Login Complet')
-}else if (username != 'admin' ) {
-  alert('Not username. Register Pls.')
+// if (username == 'admin' && password == '1234') {
+//   alert('Login Complet')
+// }else if (username != 'admin' ) {
+//   alert('Not username. Register Pls.')
+// }else{
+//   alert('Incorrect')
+// }
+
+//---------------------------------------------------- 3
+
+let javascript = confirm('JS ?')
+let python = confirm('PY ?')
+
+if(javascript || python){
+  alert('ok')
 }else{
-  alert('Incorrect')
+  alert('bye')
 }
+
+let stateBoolen = confirm('Select ?')
+
+alert(!stateBoolen)
