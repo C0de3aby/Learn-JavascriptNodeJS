@@ -1,7 +1,12 @@
-let arr = ['a','b','c','d','e']
-let index = 0
+// let inputName = prompt('Name :')
 
-while (index < arr.length) {
-  console.log(arr[index])
-  index++
-}
+// while (!inputName) {
+//   inputName = prompt('Name : (Please input something)')
+// }
+
+
+do {
+  inputName = prompt('Name : (Please input something)')
+} while (!inputName)
+
+alert(inputName)
