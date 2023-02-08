@@ -1,16 +1,26 @@
-while (true) {
-  let username = prompt('name')
-  if(username){
-    console.log(username)
-    break
-  }
+function myFunc1 () {
+  console.log(1)
+  console.log(2)
+  console.log(3)
 }
 
-let set = [0,1,2,3,4,5,6,7,8,9,10]
+myFunc1()
 
-for(let n of set){
-  if(n % 2){
-    continue
-  }
-  console.log(n)
+function myFunc2 (value) {
+  console.log('Hi ',value)
 }
+
+myFunc2('joe')
+
+function myFunc3 (from,to) {
+  console.log(`Say hi ${to} form ${from}`)
+}
+
+myFunc3('joe','doe')
+
+function myFunc4 (a,b) {
+  return a + b
+}
+
+let result = myFunc4(1,2)
+console.log(result)
