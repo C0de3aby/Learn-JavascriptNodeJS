@@ -1,29 +1,16 @@
-// let game = [
-//   ['o','x','x'],
-//   ['o','o','x'],
-//   ['x','x','o']
-// ]
-
-// let result = ''
-// for ( let rowData of game){
-//   let rowStr = ''
-//   for ( let field of rowData){
-//     rowStr += field + ' '
-//   }
-//   result += rowStr + '\n'
-// }
-
-// console.log(result)
-
-let rowCount = 6
-let result = ''
-
-for ( let i = 0 ; i <= rowCount ; i++ ){
-  let data = ''
-  for (let n = 0 ; n < i ; n ++ ) {
-    data += '*'
-    //console.log(data)
+while (true) {
+  let username = prompt('name')
+  if(username){
+    console.log(username)
+    break
   }
-  result += data+'\n'
 }
-console.log(result)
+
+let set = [0,1,2,3,4,5,6,7,8,9,10]
+
+for(let n of set){
+  if(n % 2){
+    continue
+  }
+  console.log(n)
+}
