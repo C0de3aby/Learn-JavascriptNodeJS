@@ -1,51 +1,21 @@
-function checkNumber (n) {
-  if(typeof n !== 'number'){
-    throw 'error : not a number'
-  }
-  return true
-}
-
-// ------------ Ex 1
-
-// try {
-//   let a = checkNumber(1)
-//   let b = checkNumber('a')
-//   console.log(a,b)
-// } catch (error) {
-//   alert(error)
-// }
-
-// ------------ Ex 2
-
-// try {
-//   let a = checkNumber(1)
-//    console.log(a)
-// } catch (error) {
-//   alert(error)
-// }
-
-// try {
-//   let b = checkNumber('a')
-//   console.log(a)
-// } catch (error) {
-//   alert(error)
-// }
-
-// ------------ Ex 3
-
-function findCircleArea ( radius ) {
+function findCircleArea ( radius, callback ) {
   if (radius <= 0) {
-    throw new Error('Less than or equal to 0')
+    return callback(new Error('Less than or equal to 0'))
+  } else if (typeof radius !== 'number') {
+    return callback(new Error('params not a number'))
   }
-  return (22/7)*(radius ** 2)
+  let result = (22/7)*(radius ** 2)
+  return callback(null, result)
 }
 
-try {
-  a = findCircleArea(0)
-  b = findCircleArea('1')
-  c = findCircleArea(2)
-} catch (error) {
-  console.warn(error)
+function handler (err,value){
+  if (err) {
+    console.warn(err)
+  } else {
+    console.log(value)
+  }
 }
 
-console.log('END')
+findCircleArea('A',handler)
+findCircleArea(0,handler)
+findCircleArea(1,handler)
