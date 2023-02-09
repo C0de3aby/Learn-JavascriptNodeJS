@@ -1,40 +1,51 @@
-let fruits = ['apple','banana','cherry','durian']
-
-console.log(fruits[0])
-console.log(fruits[1])
-console.log(fruits[2])
-console.log(fruits[3])
-
-let [a,b,c,d] = fruits
-console.log(a,b,c,d)
-
-let student = { user:'John Doe', age:18,grade: 3.5}
-let { user, age, grade} = student
-console.log(user,age,grade)
-
-// Ex 1
-
-function screenResolution({width,height}) {
-  return `${width} x ${height} px`
+function checkNumber (n) {
+  if(typeof n !== 'number'){
+    throw 'error : not a number'
+  }
+  return true
 }
 
-let input = {height: 1080,width:1920}
-console.log(screenResolution(input))
+// ------------ Ex 1
 
-// Ex 2
+// try {
+//   let a = checkNumber(1)
+//   let b = checkNumber('a')
+//   console.log(a,b)
+// } catch (error) {
+//   alert(error)
+// }
 
-let obj = {one:1, two:2, three:3}
+// ------------ Ex 2
 
-for(let [key, value] of Object.entries(obj)){
-  console.log(`${key} : ${value}`)
+// try {
+//   let a = checkNumber(1)
+//    console.log(a)
+// } catch (error) {
+//   alert(error)
+// }
+
+// try {
+//   let b = checkNumber('a')
+//   console.log(a)
+// } catch (error) {
+//   alert(error)
+// }
+
+// ------------ Ex 3
+
+function findCircleArea ( radius ) {
+  if (radius <= 0) {
+    throw new Error('Less than or equal to 0')
+  }
+  return (22/7)*(radius ** 2)
 }
 
-let username = 'admin'
-let password = '1234'
-
-let auth = {
-  username,
-  password
+try {
+  a = findCircleArea(0)
+  b = findCircleArea('1')
+  c = findCircleArea(2)
+} catch (error) {
+  console.warn(error)
 }
 
-console.log(auth)
+console.log('END')
