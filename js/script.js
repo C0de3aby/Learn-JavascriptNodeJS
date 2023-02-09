@@ -1,25 +1,39 @@
-function myAddFunc1 (a,b) {
-  return a + b
+console.log(1,2,3,4,5)
+
+// rest params
+function sum1(...number) {
+  console.log(number)
 }
 
-console.log(myAddFunc1(1,2))
+sum1(1,2,3,4,5)
 
-let myAddFunc2 = function (a,b) {
-  return a + b
+function sum2(...number) {
+  return number.reduce((p,c) => p + c,0)
 }
 
-console.log(myAddFunc2(1,2))
+let result = sum2(1,2,3,4,5)
+console.log(result)
 
-let myAddFunc3 = (a,b) => {
-  return a + b
-}
+// spread params
+let set = [1,3,0,-1,-2,4,5,6,7,-3]
+// const min1 = Math.min(set) // Not use
+// console.log(min1)
+const min2 = Math.min(...set)
+console.log(min2)
 
-console.log(myAddFunc3(1,2))
+// spread params ( array )
 
-let myAddFunc4 =  {
-  add: (a,b) => { return a + b },
-  sub: (a,b) => { return a - b }
-}
+let a = [2,4,5,6,7,-3]
+let b = [1,3,0,-1,-2]
 
-console.log(myAddFunc4.add(1,2))
-console.log(myAddFunc4.sub(1,2))
+console.log(a,b)
+console.log(...a,...b)
+console.log(a.concat(b))
+
+// spread params ( object )
+
+let c = { one: 1, two:2 }
+let d = { three: 3, four:4 }
+
+console.log(c,d)
+console.log({...c,...d})
