@@ -1,26 +1,25 @@
-function myFunc1 () {
-  console.log(1)
-  console.log(2)
-  console.log(3)
-}
-
-myFunc1()
-
-function myFunc2 (value) {
-  console.log('Hi ',value)
-}
-
-myFunc2('joe')
-
-function myFunc3 (from,to) {
-  console.log(`Say hi ${to} form ${from}`)
-}
-
-myFunc3('joe','doe')
-
-function myFunc4 (a,b) {
+function myAddFunc1 (a,b) {
   return a + b
 }
 
-let result = myFunc4(1,2)
-console.log(result)
+console.log(myAddFunc1(1,2))
+
+let myAddFunc2 = function (a,b) {
+  return a + b
+}
+
+console.log(myAddFunc2(1,2))
+
+let myAddFunc3 = (a,b) => {
+  return a + b
+}
+
+console.log(myAddFunc3(1,2))
+
+let myAddFunc4 =  {
+  add: (a,b) => { return a + b },
+  sub: (a,b) => { return a - b }
+}
+
+console.log(myAddFunc4.add(1,2))
+console.log(myAddFunc4.sub(1,2))
