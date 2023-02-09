@@ -1,39 +1,40 @@
-console.log(1,2,3,4,5)
+let fruits = ['apple','banana','cherry','durian']
 
-// rest params
-function sum1(...number) {
-  console.log(number)
+console.log(fruits[0])
+console.log(fruits[1])
+console.log(fruits[2])
+console.log(fruits[3])
+
+let [a,b,c,d] = fruits
+console.log(a,b,c,d)
+
+let student = { user:'John Doe', age:18,grade: 3.5}
+let { user, age, grade} = student
+console.log(user,age,grade)
+
+// Ex 1
+
+function screenResolution({width,height}) {
+  return `${width} x ${height} px`
 }
 
-sum1(1,2,3,4,5)
+let input = {height: 1080,width:1920}
+console.log(screenResolution(input))
 
-function sum2(...number) {
-  return number.reduce((p,c) => p + c,0)
+// Ex 2
+
+let obj = {one:1, two:2, three:3}
+
+for(let [key, value] of Object.entries(obj)){
+  console.log(`${key} : ${value}`)
 }
 
-let result = sum2(1,2,3,4,5)
-console.log(result)
+let username = 'admin'
+let password = '1234'
 
-// spread params
-let set = [1,3,0,-1,-2,4,5,6,7,-3]
-// const min1 = Math.min(set) // Not use
-// console.log(min1)
-const min2 = Math.min(...set)
-console.log(min2)
+let auth = {
+  username,
+  password
+}
 
-// spread params ( array )
-
-let a = [2,4,5,6,7,-3]
-let b = [1,3,0,-1,-2]
-
-console.log(a,b)
-console.log(...a,...b)
-console.log(a.concat(b))
-
-// spread params ( object )
-
-let c = { one: 1, two:2 }
-let d = { three: 3, four:4 }
-
-console.log(c,d)
-console.log({...c,...d})
+console.log(auth)
