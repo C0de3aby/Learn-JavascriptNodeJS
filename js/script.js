@@ -10,7 +10,7 @@ function getData(url) {
 let url = [
   getData('https://reqres.in/api/users/1?delay=2'),
   getData('https://reqres.in/api/users/2?delay=4'),
-  getData('https://reqres.in/api/users/3?'),
+  getData('https://qqqreqres.in/api/users/3?'),
   getData('https://reqres.in/api/users/4?delay=1')
 ]
 
@@ -31,9 +31,16 @@ let url = [
 
 // runPomiseAll()
 
-async function runPomiseRace() {
-  let result = await Promise.race(url)
+// async function runPomiseRace() {
+//   let result = await Promise.race(url)
+//   console.log('Ex2 \n',result)
+// }
+
+// runPomiseRace()
+
+async function runPomiseAllSettled() {
+  let result = await Promise.allSettled(url)
   console.log('Ex2 \n',result)
 }
 
-runPomiseRace()
+runPomiseAllSettled()
