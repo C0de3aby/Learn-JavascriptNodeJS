@@ -38,9 +38,16 @@ let url = [
 
 // runPomiseRace()
 
-async function runPomiseAllSettled() {
-  let result = await Promise.allSettled(url)
+// async function runPomiseAllSettled() {
+//   let result = await Promise.allSettled(url)
+//   console.log('Ex2 \n',result)
+// }
+
+// runPomiseAllSettled()
+
+async function runPomiseAny() {
+  let result = await Promise.any(url)
   console.log('Ex2 \n',result)
 }
 
-runPomiseAllSettled()
+runPomiseAny()
