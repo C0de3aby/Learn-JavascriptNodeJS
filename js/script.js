@@ -1,52 +1,32 @@
-// throw error
-
-function isNumber(n) {
-  if (typeof n !== "number") {
-    throw new Error("Throw error - Not a number")
-  }
-}
-
-try {
-  isNumber('1')
-} catch (error) {
-  console.log(error)
-}
-
-// Callback
-
-function isNumberCallback(n, callback) {
-  if (typeof n !== "number") {
-    return callback(new Error("Callback - Not a number"))
-  }
-}
-
-isNumberCallback(1,(err)=>{
-  console.log(err)
-})
-
-isNumberCallback('1',(err)=>{
-  console.log(err)
-})
-
-function isNumberAsync(n) {
+function getData(url) {
   return new Promise((resolve,reject) => {
-    if (typeof n !== "number") {
-      return reject(new Error("Pomise - Not a number"))
-    }
-    return resolve()
+    fetch(url)
+      .then(response => response.json())
+      .then(resolve)
+      .catch(reject)
   })
 }
 
-// isNumberAsync('1')
-//   .catch(console.log)
+let url = [
+  getData('https://reqres.in/api/users/1?delay=2'),
+  getData('https://reqres.in/api/users/2?delay=4'),
+  getData('https://reqres.in/api/users/3?'),
+  getData('https://reqres.in/api/users/4?delay=1')
+]
 
-async function run() {
-  try {
-    await isNumberAsync('1')
-  } catch (error) {
-    console.log(error)
-  }
+// async function run() {
+//   let result1 = await url[0]
+//   let result2 = await url[1]
+//   let result3 = await url[2]
+//   let result4 = await url[3]
+//   console.log('Ex1 \n',result1,result2,result3,result4)
+// }
+
+// run()
+
+async function runPomiseAll() {
+  let result = await Promise.all(url)
+  console.log('Ex2 \n',result)
 }
 
-run()
-
+runPomiseAll()
