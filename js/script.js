@@ -24,9 +24,16 @@ let url = [
 
 // run()
 
-async function runPomiseAll() {
-  let result = await Promise.all(url)
+// async function runPomiseAll() {
+//   let result = await Promise.all(url)
+//   console.log('Ex2 \n',result)
+// }
+
+// runPomiseAll()
+
+async function runPomiseRace() {
+  let result = await Promise.race(url)
   console.log('Ex2 \n',result)
 }
 
-runPomiseAll()
+runPomiseRace()
