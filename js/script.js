@@ -1,21 +1,52 @@
-// Ex 1
-fetch('https://fakerapi.it/api/v1/persons')
-  .then((response)=>{
-    response.json()
-      .then((data)=>{
-        console.log('REAL DATA 1 \n',data)
-      })
-  })
+// throw error
 
-// Ex 2
+function isNumber(n) {
+  if (typeof n !== "number") {
+    throw new Error("Throw error - Not a number")
+  }
+}
+
+try {
+  isNumber('1')
+} catch (error) {
+  console.log(error)
+}
+
+// Callback
+
+function isNumberCallback(n, callback) {
+  if (typeof n !== "number") {
+    return callback(new Error("Callback - Not a number"))
+  }
+}
+
+isNumberCallback(1,(err)=>{
+  console.log(err)
+})
+
+isNumberCallback('1',(err)=>{
+  console.log(err)
+})
+
+function isNumberAsync(n) {
+  return new Promise((resolve,reject) => {
+    if (typeof n !== "number") {
+      return reject(new Error("Pomise - Not a number"))
+    }
+    return resolve()
+  })
+}
+
+// isNumberAsync('1')
+//   .catch(console.log)
+
 async function run() {
   try {
-    let response = await fetch('https://fakerapi.it/api/v1/persons')
-    let data = response.json()
-    console.log('!!!!!',data)
+    await isNumberAsync('1')
   } catch (error) {
-    console.log('?????',error)
+    console.log(error)
   }
 }
 
 run()
+
