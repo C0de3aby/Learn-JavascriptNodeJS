@@ -17,7 +17,7 @@ elForm.addEventListener('submit', (e) =>{
       break;
     case 'minus':
       output = elInputX - elInputY
-      strOperator = '+'
+      strOperator = '-'
       break;
     case 'multiply':
       output = elInputX * elInputY
